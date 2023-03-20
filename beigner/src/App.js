@@ -13,6 +13,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <div className=''>Hai Nguyen Vo Dich React</div>
+      </body>
     </div>
   )
 }
