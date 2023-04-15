@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/HaiNguyen209/React_Super.git",
   "author": "Nguyen Hai <hainvhe141786@fpt.edu.vn>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "sass": "^1.60.0"
+  }
 }
