@@ -6,7 +6,10 @@
   "author": "Nguyen Hai <hainvhe141786@fpt.edu.vn>",
   "license": "MIT",
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
     "node-sass": "^8.0.0",
-    "sass": "^1.60.0"
+    "react-hook-form": "^7.43.9",
+    "sass": "^1.60.0",
+    "yup": "^1.1.1"
   }
 }
