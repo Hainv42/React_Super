@@ -5,33 +5,27 @@ import { useRoutes, Outlet, Navigate } from 'react-router-dom'
 import RegisterLayout from './layouts/RegisterLayout'
 import MainLayout from './layouts/MainLayout/MainLayout'
 import Profile from './pages/Profile'
-
-const Authentication = true
+import { useContext } from 'react'
+import { AppContext } from './contexts/app.context'
+import path from './constants/path'
 
 const ProtectedRoute = () => {
-  return Authentication ? <Outlet /> : <Navigate to='login' />
+  const { isAuthenticated } = useContext(AppContext)
+  return isAuthenticated ? <Outlet /> : <Navigate to='login' />
 }
 const RejectRoute = () => {
-  return !Authentication ? <Outlet /> : <Navigate to='/' />
+  const { isAuthenticated } = useContext(AppContext)
+  return !isAuthenticated ? <Outlet /> : <Navigate to='/' />
 }
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
     {
-      path: '/',
-      index: true,
-      element: (
-        <MainLayout>
-          <ProductList />
-        </MainLayout>
-      )
-    },
-    {
       path: '',
       element: <ProtectedRoute />,
       children: [
         {
-          path: '/profile',
+          path: path.profile,
           element: (
             <MainLayout>
               <Profile />
@@ -45,7 +39,7 @@ export default function useRouteElements() {
       element: <RejectRoute />,
       children: [
         {
-          path: '/login',
+          path: path.login,
           element: (
             <RegisterLayout>
               <Login />
@@ -53,7 +47,7 @@ export default function useRouteElements() {
           )
         },
         {
-          path: '/register',
+          path: path.register,
           element: (
             <RegisterLayout>
               <Register />
@@ -61,6 +55,15 @@ export default function useRouteElements() {
           )
         }
       ]
+    },
+    {
+      path: path.home,
+      index: true,
+      element: (
+        <MainLayout>
+          <ProductList />
+        </MainLayout>
+      )
     }
   ])
   return routeElements

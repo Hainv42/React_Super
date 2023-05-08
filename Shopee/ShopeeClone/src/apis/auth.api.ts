@@ -10,3 +10,7 @@ export const registerAccount = (body: { email: string; password: string }) => {
 export const loginAccount = (body: { email: string; password: string }) => {
   return http.post<AuthResponse>(URL_LOGIN, body)
 }
+
+export const logout = () => {
+  return http.post('/logout')
+}
