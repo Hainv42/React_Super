@@ -4,13 +4,13 @@ import Input from 'src/components/Input'
 import { LoginSchema, loginSchema } from 'src/utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
-import { loginAccount } from 'src/apis/auth.api'
 import { omit } from 'lodash'
 import { isAxiosUnprocessableEntity } from 'src/utils/utils'
 import { ErrorResponseApi } from 'src/types/utils.type'
 import { useContext } from 'react'
 import { AppContext } from 'src/contexts/app.context'
 import Button from 'src/components/Button'
+import authApi from 'src/apis/auth.api'
 
 type FormData = LoginSchema
 
@@ -25,7 +25,7 @@ export default function Login() {
   } = useForm<FormData>({ resolver: yupResolver(loginSchema) })
 
   const loginMutation = useMutation({
-    mutationFn: (body: Omit<FormData, 'confirm_password'>) => loginAccount(body)
+    mutationFn: (body: Omit<FormData, 'confirm_password'>) => authApi.loginAccount(body)
   })
 
   const onSubmit = handleSubmit((data) => {
