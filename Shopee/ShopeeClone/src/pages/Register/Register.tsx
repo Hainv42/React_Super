@@ -6,14 +6,16 @@ import { Omit, omit } from 'lodash'
 
 import { schema, Schema } from 'src/utils/rules'
 import Input from 'src/components/Input'
-import authApi from 'src/apis/auth.api' 
+import authApi from 'src/apis/auth.api'
 import { isAxiosUnprocessableEntity } from 'src/utils/utils'
 import { ErrorResponseApi } from 'src/types/utils.type'
 import { useContext } from 'react'
 import { AppContext } from 'src/contexts/app.context'
 import Button from 'src/components/Button'
 
-type FormData = Schema
+type FormData = Pick<Schema, 'email' | 'password' | 'confirm_password'>
+
+const registerSchema = schema.pick(['email', 'password', 'confirm_password'])
 
 export default function Register() {
   const { setIsAuthenticated, setProfile } = useContext(AppContext)
@@ -23,7 +25,7 @@ export default function Register() {
     handleSubmit,
     setError,
     formState: { errors }
-  } = useForm<FormData>({ resolver: yupResolver(schema) })
+  } = useForm<FormData>({ resolver: yupResolver(registerSchema) })
 
   // const registerAccountMutation = useMutation({
   //   mutationFn: (body: Omit<FormData, 'confirm_password'>) => registerAccount(body)
