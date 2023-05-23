@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   extends: [
     // Chúng ta sẽ dùng các rule mặc định từ các plugin mà chúng ta đã cài.
