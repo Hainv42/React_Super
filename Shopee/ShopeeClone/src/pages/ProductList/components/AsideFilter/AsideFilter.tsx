@@ -40,18 +40,12 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
   const navigate = useNavigate()
 
   const handleRemoveAll = () => {
-    console.log('first')
     navigate({
       pathname: path.home,
       search: createSearchParams(omit(queryConfig, ['price_max', 'price_min', 'category', 'rating_filter'])).toString()
     })
   }
-  const handleRemoveAll2 = () => {
-    navigate({
-      pathname: path.home,
-      search: createSearchParams(omit(queryConfig, ['price_min', 'price_max', 'rating_filter', 'category'])).toString()
-    })
-  }
+
   const onSubmit = handleSubmit((data) => {
     navigate({
       pathname: path.home,
@@ -193,7 +187,7 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
       <RatingStar queryConfig={queryConfig} />
       <div className='my-4 h-[1px] bg-gray-300' />
       <Button
-        onClick={handleRemoveAll2}
+        onClick={handleRemoveAll}
         className='flex w-full items-center justify-center bg-orange p-2 text-sm uppercase text-white hover:bg-orange/80'
       >
         Xóa tất cả
