@@ -4,11 +4,12 @@ import InputNumber, { InputNumberProps } from '../InputNumber'
 interface Props extends InputNumberProps {
   max?: number
   onIncrese: (value: number) => void
+
   onDecrese: (value: number) => void
   className?: string
 }
 
-export default function QuantityController({ max, onIncrese, onDecrese}: Props) {
+export default function QuantityController({ max, onIncrese, onDecrese }: Props) {
   return (
     <div className='ml-10 flex items-center'>
       <button className='flex h-8 w-8 items-center justify-center rounded-l-sm border border-gray-300 text-gray-600'>
