@@ -3,8 +3,8 @@ import DOMPurify from 'dompurify'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import productApi from 'src/apis/product.api'
-import InputNumber from 'src/components/InputNumber'
 import ProductRating from 'src/components/ProductRating'
+import QuantityController from 'src/components/QuantityController'
 import { Product } from 'src/types/product.type'
 import { formatCurrency, formatNumberToSocialStyle, getIdFromNameId, rateSale } from 'src/utils/utils'
 
@@ -15,6 +15,7 @@ export default function ProductDetail() {
     queryKey: ['product', id],
     queryFn: () => productApi.getProductDetail(id as string)
   })
+  const [buyCount, setBuyCount] = useState(1)
   const [currentIndexImages, setCurrentIndexImages] = useState([0, 5])
   const [activeImage, setActiveImage] = useState('')
   const product = productDetailData?.data.data
@@ -68,6 +69,10 @@ export default function ProductDetail() {
 
   const handleRemoveZoom = () => {
     imageRef.current?.removeAttribute('style')
+  }
+
+  const handleByCount = (value: number) => {
+    setBuyCount(value)
   }
 
   if (!product) return null
@@ -155,7 +160,14 @@ export default function ProductDetail() {
               </div>
               <div className='mt-8 flex items-center'>
                 <div className='capitalize text-gray-500'>số lượng</div>
-                <div className='ml-10 flex items-center'>
+                <QuantityController
+                  onDecrese={handleByCount}
+                  onIncrese={handleByCount}
+                  onType={handleByCount}
+                  value={buyCount}
+                  max={product.quantity}
+                />
+                {/* <div className='ml-10 flex items-center'>
                   <button className='flex h-8 w-8 items-center justify-center rounded-l-sm border border-gray-300 text-gray-600'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -187,7 +199,7 @@ export default function ProductDetail() {
                       <path strokeLinecap='round' strokeLinejoin='round' d='M12 4.5v15m7.5-7.5h-15' />
                     </svg>
                   </button>
-                </div>
+                </div> */}
                 <div className='ml-6 text-sm text-gray-500'>{product.quantity} sản phẩm có sẵn</div>
               </div>
               <div className='mt-8 flex items-center'>
