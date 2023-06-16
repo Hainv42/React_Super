@@ -20,7 +20,7 @@ export default function QuantityController({
 }: Props) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let _value = Number(event.target.value)
-    if (max !== undefined && _value > max ) {
+    if (max !== undefined && _value > max) {
       _value = max
     } else if (_value < 1) {
       _value = 1
@@ -45,7 +45,7 @@ export default function QuantityController({
   }
 
   return (
-    <div className={'flex items-center' + classNameWrapper}>
+    <div className={'flex items-center ' + classNameWrapper}>
       <button
         className='flex h-8 w-8 items-center justify-center rounded-l-sm border border-gray-300 text-gray-600'
         onClick={decrease}
