@@ -1,6 +1,6 @@
 import { Link, createSearchParams, useNavigate } from 'react-router-dom'
 import Popover from '../Popover'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import { useContext } from 'react'
 import { AppContext } from 'src/contexts/app.context'
 import path from 'src/constants/path'
@@ -10,9 +10,16 @@ import { useForm } from 'react-hook-form'
 import { schema, Schema } from 'src/utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { omit } from 'lodash'
+import purchaseApi from 'src/apis/purchase.api'
+import { purchasesStatus } from 'src/constants/purchase'
+import noProduct from 'src/assets/images/no-product.png'
+import DOMPurify from 'dompurify'
+import { formatCurrency } from 'src/utils/utils'
 
 type FormData = Pick<Schema, 'name'>
 const nameSchema = schema.pick(['name'])
+
+const MAX_PURCHESE = 5
 
 export default function Header() {
   const queryConfig = useQueryConfig()
@@ -34,6 +41,13 @@ export default function Header() {
       setProfile(null)
     }
   })
+  //
+  const { data: purchasesInCartData } = useQuery({
+    queryKey: ['purchases', { status: purchasesStatus.inCart }],
+    queryFn: () => purchaseApi.getPurchase({ status: purchasesStatus.inCart })
+  })
+
+  const purchasesInCart = purchasesInCartData?.data.data
 
   const handleLogOut = () => {
     logoutMutation.mutate()
@@ -193,7 +207,7 @@ export default function Header() {
             <Popover
               className='flex cursor-pointer items-center py-1 hover:text-gray-300'
               children={
-                <Link to='/'>
+                <Link to='/' className='relative'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'
@@ -208,74 +222,51 @@ export default function Header() {
                       d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
                     />
                   </svg>
+                  <span className='absolute left-[18px] top-[-10px] rounded-[12px] bg-white px-[8px] py-[1px] text-xs text-orange'>
+                    {purchasesInCart?.length}
+                  </span>
                 </Link>
               }
               renderPopover={
                 <div className='relative max-w-[400px] rounded-sm border border-gray-200 bg-white text-sm shadow-md '>
-                  <div className='p-2'>
-                    <div className='capitalize text-gray-400'>Sản phẩm mới</div>
-                  </div>
-                  <div className='mt-5'>
-                    <div className='mt-4 flex pr-2 '>
-                      <div className='flex-shrink-0'>
-                        <img
-                          src='https://down-vn.img.susercontent.com/file/sg-11134201-22120-swknpm2hapkv48_tn'
-                          alt='anh'
-                          className='h-11 w-11 object-cover'
-                        />
+                  {purchasesInCart ? (
+                    <div className='p-2'>
+                      <div className='capitalize text-gray-400'>Sản phẩm mới</div>
+                      <div className='mt-5'>
+                        {purchasesInCart.slice(0, MAX_PURCHESE).map((purchase) => (
+                          <div className='mt-4 flex pr-2 ' key={purchase._id}>
+                            <div className='flex-shrink-0'>
+                              <img
+                                src={purchase.product.image}
+                                alt={purchase.product.image}
+                                className='h-11 w-11 object-cover'
+                              />
+                            </div>
+                            <div className='ml-2 flex-grow overflow-hidden'>
+                              <div className='truncate'>{purchase.product.name}</div>
+                            </div>
+                            <div className='ml-4'>
+                              <span className='text-orange'>${formatCurrency(purchase.price)}</span>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      <div className='ml-2 flex-grow overflow-hidden'>
-                        <div className='truncate'>
-                          Adapter sạc nhanh BOOST↑CHARGE™ 25W USB-C PD (PPS) Belkin - WCA004dqWH
+                      <div className='flex items-center justify-between px-2 py-2'>
+                        <div className='text-xs capitalize text-gray-500'>
+                          {purchasesInCart.length > MAX_PURCHESE ? purchasesInCart.length - MAX_PURCHESE : ''} Thêm vào
+                          giỏ hàng
                         </div>
-                      </div>
-                      <div className='ml-4'>
-                        <span className='text-orange'> ₫317.000</span>
+                        <button className='rounded-sm bg-orange px-4 py-2 capitalize hover:bg-opacity-90 '>
+                          Mua hàng
+                        </button>
                       </div>
                     </div>
-                  </div>
-                  <div className='mt-5'>
-                    <div className='mt-4 flex pr-2'>
-                      <div className='flex-shrink-0'>
-                        <img
-                          src='https://down-vn.img.susercontent.com/file/sg-11134201-22120-swknpm2hapkv48_tn'
-                          alt='anh'
-                          className='h-11 w-11 object-cover'
-                        />
-                      </div>
-                      <div className='ml-2 flex-grow overflow-hidden'>
-                        <div className='truncate'>
-                          Adapter sạc nhanh BOOST↑CHARGE™ 25W USB-C PD (PPS) Belkin - WCA004dqWH
-                        </div>
-                      </div>
-                      <div className='ml-4'>
-                        <span className='text-orange'> ₫317.000</span>
-                      </div>
+                  ) : (
+                    <div className='flex h-[300px] w-[300px] items-center justify-center p-2'>
+                      <img src={noProduct} alt='No-Product' className='h-24 w-24 capitalize' />
+                      <div className='mt-3 capitalize'>Chưa có sản phẩm</div>
                     </div>
-                  </div>
-                  <div className='mt-5'>
-                    <div className='mt-4 flex pr-2'>
-                      <div className='flex-shrink-0'>
-                        <img
-                          src='https://down-vn.img.susercontent.com/file/sg-11134201-22120-swknpm2hapkv48_tn'
-                          alt='anh'
-                          className='h-11 w-11 object-cover'
-                        />
-                      </div>
-                      <div className='ml-2 flex-grow overflow-hidden'>
-                        <div className='truncate'>
-                          Adapter sạc nhanh BOOST↑CHARGE™ 25W USB-C PD (PPS) Belkin - WCA004dqWH
-                        </div>
-                      </div>
-                      <div className='ml-4'>
-                        <span className='text-orange'> ₫317.000</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='flex items-center justify-between px-2 py-2'>
-                    <div className='text-xs capitalize text-gray-500'>Thêm vào giỏ hàng</div>
-                    <button className='rounded-sm bg-orange px-4 py-2 capitalize hover:bg-opacity-90 '>Mua hàng</button>
-                  </div>
+                  )}
                 </div>
               }
             ></Popover>

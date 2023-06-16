@@ -1,5 +1,3 @@
-import { Type } from 'react-toastify/dist/utils'
-
 export interface SuccessResponseApi<Data> {
   message: string
   data: Data
