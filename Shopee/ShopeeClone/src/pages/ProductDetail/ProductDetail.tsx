@@ -180,14 +180,7 @@ export default function ProductDetail() {
               </div>
               <div className='mt-8 flex items-center'>
                 <div className='capitalize text-gray-500'>số lượng</div>
-                <QuantityController
-                  onDecrese={handleByCount}
-                  onIncrese={handleByCount}
-                  onType={handleByCount}
-                  value={buyCount}
-                  max={product.quantity}
-                />
-
+                <QuantityController max={product.quantity} />
                 <div className='ml-6 text-sm text-gray-500'>{product.quantity} sản phẩm có sẵn</div>
               </div>
               <div className='mt-8 flex items-center'>
