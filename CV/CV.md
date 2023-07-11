@@ -1,6 +1,6 @@
 # Nguyen Van Hai
 
-<img src="./public/images/me.jpg" width="120" style='border-radius: 10px; margin-bottom: 20px;'/>
+<img src="./avatar.jpg" width="120" style='border-radius: 10px; margin-bottom: 20px;'/>
 
 - 👶**Birthday**: 20/09/1999
 - 🏰**Address**: Hai Duong, Viet Nam
@@ -13,7 +13,29 @@ I started learning to code five year ago,
 
 In the past year, I have been very focused on learning front-end web programming. Now I am very confident that my abilities can meet your requirements.
 
-## 👔Projects
+## 💁🏻‍♂️Work experience
+
+### Front-end Web Engineer
+
+**FPT Software**, Viet Nam, 9/2022- 6/2023
+FPT Software is a software technology company in Vietnam with over 26000 employees in Vietnam and many countries in the world.
+
+I am a front-end developer rank 2 for the Recruit projec - a platform to support find a job in Japan - team size 70 members. My day job is progress reporting, functional analysis, UI code, logic code, test writing, testing.
+
+We use React, Typescript, Java, Jira and AWS for product development.
+
+Because I have some household chores. And I also want to become the freelance worker. I asked to leave the company.
+
+**Amela company**, Viet Nam, 2/2021 - 6/2022
+Amela company is a startup in Vietnam specializing in software outsourcing and developing website for Japan.
+
+I joined the company as a front-end on-the-job training. After 1 month, I joined in the first project. Products that I develop include landing pages and some function into the system displaying and calculating the reservation amount.After 6 months, I became a front-end developer and participated in 2 more projects at the company. Here I developed my personal skills quite quickly but I also left the company after that.
+
+We used ReactJs to development front-end and JavaSpring to development back-end.
+
+I also have technology sessions here to improve performance and improve code quality.
+
+## 👔Side Projects
 
 ### Shopee clone
 
@@ -35,61 +57,11 @@ This is a project to clone the user page of the e-commerce platform [Shopee](htt
 - Unit Test
 - Manage components with Storybook
 
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
+**🔗Webiste**: [https://hainv209-shoppe-clone.vercel.app](https://hainv209-shoppe-clone.vercel.app)
 
-**🔐Account for testing**: `user3@gmail.com` / `hackerlord`
+**🔐Account for testing**: `hainv209@gmail.com` / `123456`
 
-**🔗Github**: [https://github.com](https://github.com)
-
-### Portfolio
-
-This is my personal website to introduce myself, which I designed and coded myself. I also use this to post my blogs.
-
-**Technologies used**: ReactJs, Create React App, Styled Component, ESLint, Prettier, React Helmet, React Router
-
-**Functions include**:
-
-- Fully responsive website
-- Scoped CSS with Styled Component
-- Linting with Prettier and ESLint
-- Improve SEO with React helmet
-- React Context is used to manage state.
-- Code Splitting
-
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
-
-**🔗Github**: [https://github.com](https://github.com)
-
-### Booking Hotel Template
-
-A fully responsive website that I coded from a design file on the internet. This mini-website has 4 pages.
-
-**Technologies used**: HTML5, SASS, Bootstrap 5, Javascript
-
-**Functions include**:
-
-- Fully responsive website
-- Semantic HTML
-- Mega menu dropdown
-
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
-
-**🔗Github**: [https://github.com](https://github.com)
-
-### Online Shop Template
-
-This was one of the first projects I did when I first learned web programming. I don't use any libraries, just use HTML and CSS to code a fully responsive website.
-
-**Technologies used**: HTML5, SASS, Javascript
-
-**Functions include**:
-
-- Fully responsive website
-- Semantic HTML
-
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
-
-**🔗Github**: [https://github.com](https://github.com)
+**🔗Github**: [https://github.com/Hainv42/React_Super](https://github.com/Hainv42/React_Super)
 
 ## 🔧Skills
 
@@ -101,13 +73,17 @@ I'm quite confident that I can catch up with other languages when needed very qu
 
 ### 💻Web Front-end Technologies
 
-React, React Query, RTK Query, Redux, Styled Components, TailwindCss, Sass, Webpack, Axios, Vite, Vitest, Mock Service Worker, HTML5, CSS3, SEO.
+React, Vue, Next.js, React Query, RTK Query, Redux, Styled Components, TailwindCss, Sass, Webpack, Axios, Vite, Vitest, Mock Service Worker, HTML5, CSS3, SEO.
 
 ### 🧮Web Back-end Technologies
 
 - Protocols: REST, HTTP(S)
-- Frameworks/Libraries: Node.js, Json server
+- Frameworks/Libraries: Java, Node.js.
 - Cloud Services: Vercel, Netlify
+
+### 🛠Database
+
+- SQL Server, MySQL, MongoDB
 
 ### 🔨Dev Tools
 
@@ -115,23 +91,18 @@ Git, Postman, Lighthouse, React Developer Tool, Redux Dev Tool, React Query Dev 
 
 ### 💁🏻‍♂️Industrial & Interpersonal Skills
 
-Write, Present, Teamwork, SEO, digital marketing.
-
-## 🥇Honors & Awards
-
-- End of term scholarship (2022)
-- First semester scholarship (2021-2022)
+Write, Present, Teamwork, SEO.
 
 ## 📚Education
 
 Software Engineering
 
-**Danang University of Science and Technology** - Information security, 2021 - 2025
+**FPT University of Science and Technology** - Information security, 2021 - 2025
 
 ## 💋Languages
 
 - **English**
-  Read and understand specialized documents. Good communication.
+  Read and understand specialized documents.
 
 - **Vietnamese**
 
@@ -139,12 +110,11 @@ Software Engineering
 
 ## ☎️Contact information
 
-- 📞Phone: 0768 111 111
-- 📧Email: [duthanhduoc@gmail.com](mailto:duthanhduoc@gmail.com)
-- ✍🏻Website: [https://duthanhduoc.com/](https://duthanhduoc.com/)
-- 🔗Github: [https://github.com/duthanhduoc](https://github.com/duthanhduoc)
-- 🔗Facebook: [https://www.facebook.com/duthanhduoc/](https://www.facebook.com/duthanhduoc/)
+- 📞Phone: 038 303 7956
+- 📧Email: [hainv20999@gmail.com](mailto:hainv20999@gmail.com)
+- 🔗Github: [https://github.com/HaiNguyen209](https://github.com/HaiNguyen209)
+- 🔗Facebook: [https://www.facebook.com/hainv20999/](https://www.facebook.com/hainv20999/)
 
 ## 🙏🏻Thanks!
 
-> Looking forward to hearing from you - Du Thanh Duoc
+> Looking forward to hearing from you - Nguyen Van hai
