@@ -5,31 +5,48 @@
 - 👶**Birthday**: 20/09/1999
 - 🏰**Address**: Hai Duong, Viet Nam
 
-## 🙋🏻‍♂️Brief introduction
-
-> Hi, I'm a front-end developer who can code all day without getting tired.
-
-I started learning to code five year ago,
-
-In the past year, I have been very focused on learning front-end web programming. Now I am very confident that my abilities can meet your requirements.
-
 ## 💁🏻‍♂️Work experience
 
 ### Front-end Web Engineer
 
-**FPT Software**, Viet Nam, 9/2022- 6/2023
-FPT Software is a software technology company in Vietnam with over 26000 employees in Vietnam and many countries in the world.
+#### FPT Software, 9/2022- 6/2023
 
-I am a front-end developer rank 2 for the Recruit projec - a platform to support find a job in Japan - team size 70 members. My day job is progress reporting, functional analysis, UI code, logic code, test writing, testing.
+**Front-end developer**
 
-We use React, Typescript, Java, Jira and AWS for product development.
+- Recruit project - a platform to support find a job in Japan
+- Team size 70 members ( 20 members on team FE )
+- My day job is progress reporting, functional analysis, UI code, logic code, test writing, testing.
+
+**Achievements and skills gained**:
+
+- Use ReactJs, VueJs and Typescript to developing project.
+- Jira and AWS for product development.
+
+**Functions include**:
+
+- Filter, search, CRUD job.
+- Use the Zod and React Hook Form to validate the form.
+- Unit Test
+- Manage components with Storybook.
 
 Because I have some household chores. And I also want to become the freelance worker. I asked to leave the company.
 
-**Amela company**, Viet Nam, 2/2021 - 6/2022
-Amela company is a startup in Vietnam specializing in software outsourcing and developing website for Japan.
+Here we also have seminars to share technology for the team to discuss and find the optimal solutions for the products. And I have share about syntax VueJS for team front end.
 
-I joined the company as a front-end on-the-job training. After 1 month, I joined in the first project. Products that I develop include landing pages and some function into the system displaying and calculating the reservation amount.After 6 months, I became a front-end developer and participated in 2 more projects at the company. Here I developed my personal skills quite quickly but I also left the company after that.
+#### Amela company, 2/2021 - 6/2022
+
+**Front-end developer**
+
+- Hotel reservation management project - a platform to support manage and book room hotel for customers in Japan
+- Team size 9 members
+- Design and coding landing page, business analysis and coding function for project.
+
+**Technologies used**: Reactjs, VueJs, Tailwindcss, React Hook Form, Yup.
+**Functions include**:
+
+- Use the Yub and React Hook Form to validate the form.
+- Function of calculate the price of the reservation.
+- Search, filter and CRUD room.
 
 We used ReactJs to development front-end and JavaSpring to development back-end.
 
@@ -97,7 +114,7 @@ Write, Present, Teamwork, SEO.
 
 Software Engineering
 
-**FPT University of Science and Technology** - Information security, 2021 - 2025
+**FPT University** - Software Engineering, 2018 - 2022
 
 ## 💋Languages
 
